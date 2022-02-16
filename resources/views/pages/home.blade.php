@@ -2,6 +2,7 @@
 
 @section('content')
 
-    <h1>Sono home</h1>
+    <postcards-comp></postcards-comp>
+    ciao
 
 @endsection

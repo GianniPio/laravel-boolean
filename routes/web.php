@@ -6,4 +6,4 @@ use Illuminate\Support\Facades\Route;
 
 // Auth::routes();
 
-Route::get('/home', 'GuestController@home')->name('home');
+Route::get('/', 'GuestController@home')->name('home');
