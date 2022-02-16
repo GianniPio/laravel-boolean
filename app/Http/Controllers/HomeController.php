@@ -6,8 +6,14 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home() {
-
-        return view('pages.home');
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
+
 }
