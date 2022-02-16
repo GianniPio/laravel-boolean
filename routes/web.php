@@ -7,3 +7,5 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes();
 
 Route::get('/', 'GuestController@home')->name('home');
+
+Route::get('api/postacards/list', 'ApiController@getPostcards') -> name('api.postcards.list');

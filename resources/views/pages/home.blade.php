@@ -3,6 +3,5 @@
 @section('content')
 
     <postcards-comp></postcards-comp>
-    ciao
 
 @endsection

@@ -1912,9 +1912,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      postcards: []
+    };
+  },
   mounted: function mounted() {
-    console.log('hello world');
+    var _this = this;
+
+    axios.get('api/postacards/list').then(function (r) {
+      return _this.postcards = r.data;
+    })["catch"](function (e) {
+      return console.error(e);
+    });
   }
 });
 
@@ -37506,9 +37539,49 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("ciao")])
+  return _c("div", { attrs: { id: "postcards" } }, [
+    _c(
+      "table",
+      { staticClass: "m-auto", attrs: { border: "1" } },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._l(_vm.postcards, function (postcard) {
+          return _c("tr", { key: postcard.id }, [
+            _c("td", [_vm._v(_vm._s(postcard.id))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(postcard.sender))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(postcard.andress))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(postcard.text))]),
+            _vm._v(" "),
+            _c("td", [_vm._v(_vm._s(postcard.image))]),
+          ])
+        }),
+      ],
+      2
+    ),
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("tr", [
+      _c("th", [_vm._v("ID")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Sender")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Address")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Text")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Image")]),
+    ])
+  },
+]
 render._withStripped = true
 
 
