@@ -2,9 +2,9 @@
 
 @section('content')
     
-    <form action="{{route('postcardStore')}}" method="POST">
+    <form action="{{route('postcardStore')}}" method="POST" enctype="multipart/form-data">
 
-        @method('POST');
+        @method('POST')
         @csrf
 
         <label for="sender">Sender</label><br>
@@ -13,6 +13,8 @@
         <input type="text" name="address"><br><br>
         <label for="text">Text</label><br>
         <input type="text" name="text"><br><br>
+        <label for="image">Image</label><br>
+        <input type="file" name="image"><br><br>
 
         <input class="btn-primary" type="submit" value="Create">
 
